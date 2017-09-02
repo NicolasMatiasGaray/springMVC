@@ -7,8 +7,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
+@Transactional
 public class BaseDAOImpl implements BaseDAO{
 
 	@Autowired
@@ -16,19 +18,13 @@ public class BaseDAOImpl implements BaseDAO{
 	
 	@Override
 	public void persist(Object obj) {
-		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-		session.persist(obj);
-		tx.commit();
-		session.close();
+		sessionFactory.getCurrentSession().persist(obj);
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public <T> List<T> getAll(Class<T> clazz) {
-		Session session = sessionFactory.openSession();
-		List<T> list = session.createQuery("from " + clazz.getName()).list();
-		session.close();
+		List<T> list = sessionFactory.getCurrentSession().createQuery("from " + clazz.getName()).list();
 		return list;
 	}
 
