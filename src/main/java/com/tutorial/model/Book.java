@@ -6,6 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="MVC_BOOK")
@@ -17,9 +21,13 @@ public class Book {
 	private int id;
 
 	@Column(name="TITLE")
+	@NotNull
+	@Size(min=2,max=20)
 	private String title;
 
 	@Column(name="PRICE")
+	@DecimalMin("2.0")
+	@DecimalMax("100.0")
 	private Double price;
 
 	public int getId() {

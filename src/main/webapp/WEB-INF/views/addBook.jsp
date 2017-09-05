@@ -13,8 +13,8 @@
 <h3>Add a Book</h3>
 
 <springform:form commandName="book" action="/springMVC/saveBook">
-Title : <springform:input path="title"/> <br>
-Price : <springform:input path="price"/> <br>
+Title : <springform:input path="title"/> <springform:errors path="title"/> <br>
+Price : <springform:input path="price"/> <springform:errors path="price"/> <br>
 
 <input type="submit" value="Add Book"/>
 
