@@ -26,6 +26,7 @@ public class Book {
 	private String title;
 
 	@Column(name="PRICE")
+	@NotNull
 	@DecimalMin("2.0")
 	@DecimalMax("100.0")
 	private Double price;
