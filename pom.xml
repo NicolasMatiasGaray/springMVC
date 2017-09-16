@@ -130,12 +130,22 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- HSQL DB -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>2.3.5</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Mockito Framework -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.10.0</version>
+			<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
