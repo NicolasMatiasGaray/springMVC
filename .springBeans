@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/com/tutorial/xml/applicationContext.xml</config>
 		<config>src/main/webapp/WEB-INF/spring-mvc-servlet.xml</config>
+		<config>src/main/resources/com/tutorial/xml/applicationContextTest.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
